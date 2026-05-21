@@ -1,0 +1,136 @@
+/* Tasks Page */
+.tasks-page {
+    padding: 2rem 0;
+}
+
+.tasks-page h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid #ddd;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.filter-btn:hover {
+    border-color: #667eea;
+}
+
+.tasks-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.task-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.task-header h3 {
+    margin: 0;
+    color: #333;
+    flex: 1;
+}
+
+.task-description {
+    color: #666;
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+}
+
+.task-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.project-name,
+.due-date {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.task-status-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: auto;
+}
+
+.task-status-selector label {
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.task-status-selector select {
+    flex: 1;
+    padding: 0.5rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.task-status-selector select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .tasks-list {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-section {
+        justify-content: space-between;
+    }
+
+    .filter-btn {
+        flex: 1;
+        min-width: calc(50% - 0.5rem);
+    }
+}
